@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require './lib/harry_potter_books'
+
+HarryPotterBooks::CLI.new.call
