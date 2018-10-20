@@ -3,6 +3,7 @@
 require "bundler/setup"
 require "harry_potter_books"
 
-# require './lib/harry_potter_books'
-
 HarryPotterBooks::CLI.new.call
+
+#This file is set up as it is so I don't have to program in it anymore.
+#Everything can be programmed into this object entirely: HarryPotterBooks::CLI.new.call
