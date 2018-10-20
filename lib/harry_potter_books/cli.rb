@@ -10,7 +10,7 @@ class HarryPotterBooks::CLI
   def list_books
     puts "Here is a list of Harry Potter Books:"
     puts <<-DOC
-    1. Harry Potter and the Philosopher's Stone
+    1. Harry Potter and the Sorcerer's Stone
     2. Harry Potter and the Chamber of Secrets
     3. Harry Potter and the Prisoner of Azkaban
     4. Harry Potter and the Goblet of Fire
@@ -19,6 +19,7 @@ class HarryPotterBooks::CLI
     7. Harry Potter and the Deathly Hallows
     8. Harry Potter and the Cursed Child- Parts One and Two playscript
     DOC
+    @books = HarryPotterBooks::Potter.book
   end
 
   def menu

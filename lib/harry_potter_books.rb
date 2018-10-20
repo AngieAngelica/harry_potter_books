@@ -6,3 +6,4 @@ require 'pry'
 
 require_relative "./harry_potter_books/version"
 require_relative "./harry_potter_books/cli"
+require_relative "./harry_potter_books/hpbooks"
