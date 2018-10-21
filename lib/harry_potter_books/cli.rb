@@ -21,7 +21,7 @@ class HarryPotterBooks::CLI
     # ^pseudocode menu
     @books = HarryPotterBooks::Potter.book
     @books.each.with_index(1) do |book, i|
-      puts <<-DOC
+      puts <<~DOC
        #{i}.#{book.name}
       DOC
     end
@@ -30,14 +30,16 @@ class HarryPotterBooks::CLI
   def menu
     input = ''
     while input != "exit"
-      puts "Enter the number of the book you'd like a summary about,
+      puts <<~DOC
+      Enter the number of the book you'd like a summary about,
       or type list to see the books again, or type exit:"
+      DOC
       input = gets.strip.downcase
 
       if input.to_i > 0
         the_book = @books[input.to_i-1]
         #@books[input.to_i-1] is to get into the books array
-        puts <<-DOC
+        puts <<~DOC
         #{the_book.name}
         #{the_book.summary}
 
