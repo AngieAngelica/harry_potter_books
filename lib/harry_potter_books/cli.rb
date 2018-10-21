@@ -8,18 +8,21 @@ class HarryPotterBooks::CLI
   end
 
   def list_books
-    puts "Here is a list of Harry Potter Books:"
-    puts <<-DOC
-    1. Harry Potter and the Sorcerer's Stone
-    2. Harry Potter and the Chamber of Secrets
-    3. Harry Potter and the Prisoner of Azkaban
-    4. Harry Potter and the Goblet of Fire
-    5. Harry Potter and the Order of the Phoenix
-    6. Harry Potter and the Half-Blood Prince
-    7. Harry Potter and the Deathly Hallows
-    8. Harry Potter and the Cursed Child- Parts One and Two playscript
-    DOC
+    puts "Here is a list of Harry Potter books:"
+    # puts <<-DOC
+    # 1. Harry Potter and the Sorcerer's Stone
+    # 2. Harry Potter and the Chamber of Secrets
+    # 3. Harry Potter and the Prisoner of Azkaban
+    # 4. Harry Potter and the Goblet of Fire
+    # 5. Harry Potter and the Order of the Phoenix
+    # 6. Harry Potter and the Half-Blood Prince
+    # 7. Harry Potter and the Deathly Hallows
+    # 8. Harry Potter and the Cursed Child- Parts One and Two playscript
+    # DOC
     @books = HarryPotterBooks::Potter.book
+    @books.each.with_index(1) do |book, i|
+      puts "#{i}. #{book.name} - #{book.author} - #{book.overview} - #{book.url}"
+    end
   end
 
   def menu
@@ -28,26 +31,15 @@ class HarryPotterBooks::CLI
       puts "Enter the number of the book you'd like a summary about,
       or type list to see the books again, or type exit:"
       input = gets.strip.downcase
-      case input
-      when "1"
-        puts "Here is a summary of Harry Potter and the Philosopher's Stone:"
-      when "2"
-        puts "Here is a summary of Harry Potter and the Chamber of Secrets:"
-      when "3"
-        puts "Here is a summary of Harry Potter and the Prisoner of Azkaban:"
-      when "4"
-        puts "Here is a summary of Harry Potter and the Goblet of Fire:"
-      when "5"
-        puts "Here is a summary of Harry Potter and the Order of the Phoenix:"
-      when "6"
-        puts "Here is a summary of Harry Potter and the Half-Blood Prince:"
-      when "7"
-        puts "Here is a summary of Harry Potter and the Deathly Hallows:"
-      when "8"
-        puts  "Here is a summary of Harry Potter and the Cursed Child- Parts One and Two playscript:"
-      when "list"
-        puts list_books
-      when "exit"
+
+      if input.to_i > 0
+        the_book = @books[input.to_i-1]
+        #@books[input.to_i-1] is to get into the books array
+        puts "#{the_book.name} - #{the_book.author} - #{the_book.overview} - #{the_book.url}"
+        #you are now reading out of these objects ^
+      elsif input =="list"
+        list_books
+      elsif input =="exit"
         goodbye
       else
         puts "Please try again"
