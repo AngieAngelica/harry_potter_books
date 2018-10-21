@@ -20,5 +20,11 @@ def self.scrape_book_1
   goodreads_rating = doc.css("span")[40].inner_text
 end
 
+def self.scrape_book_2
+  doc= Nokogiri::HTML(open("https://www.goodreads.com/book/show/15881.Harry_Potter_and_the_Chamber_of_Secrets"))
+  name = doc.css("h1").text # same as book 1
+  summary = doc.css("span")[47].inner_text # same as book 1
+  goodreads_rating = doc.search("span.average").text #different from book 1
+end
 
 end
