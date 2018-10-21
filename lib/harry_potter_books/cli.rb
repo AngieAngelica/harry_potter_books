@@ -20,7 +20,15 @@ class HarryPotterBooks::CLI
     # DOC
     @books = HarryPotterBooks::Potter.book
     @books.each.with_index(1) do |book, i|
-      puts "#{i}. #{book.name} - #{book.summary} - #{book.goodreads_rating} - #{book.quote}"
+      puts <<-DOC
+       "#{i}.#{book.name}
+    Summary: #{book.summary}
+
+    Goodreads rating: #{book.goodreads_rating}
+
+    A quote from the book: #{book.quote}"
+
+      DOC
     end
   end
 
@@ -34,7 +42,7 @@ class HarryPotterBooks::CLI
       if input.to_i > 0
         the_book = @books[input.to_i-1]
         #@books[input.to_i-1] is to get into the books array
-        puts "#{the_book.name} - #{the_book.overview} - #{the_book.url}"
+        puts "#{the_book.name} - #{the_book.summary} - #{the_book.goodreads_rating} - #{the_book.quote}"
         #you are now reading out of these objects ^
       elsif input =="list"
         list_books

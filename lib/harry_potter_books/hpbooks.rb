@@ -9,8 +9,15 @@ class HarryPotterBooks::Potter
   def self.scrape_books
     books = []
     books << self.scrape_book_1
-# paste text from notes in bin
-    books
+    books << self.scrape_book_2
+    books << self.scrape_book_3
+    books << self.scrape_book_4
+    books << self.scrape_book_5
+    books << self.scrape_book_6
+    books << self.scrape_book_7
+#  ^ replaces text from notes in bin
+
+
   end
 
   def self.scrape_book_1
