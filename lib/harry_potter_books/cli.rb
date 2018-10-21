@@ -8,7 +8,7 @@ class HarryPotterBooks::CLI
   end
 
   def list_books
-    puts "Here is a list of Harry Potter books:"
+    puts "Here is a list of Harry Potter books written by J.K Rowling:"
     # puts <<-DOC
     # 1. Harry Potter and the Sorcerer's Stone
     # 2. Harry Potter and the Chamber of Secrets
@@ -17,7 +17,6 @@ class HarryPotterBooks::CLI
     # 5. Harry Potter and the Order of the Phoenix
     # 6. Harry Potter and the Half-Blood Prince
     # 7. Harry Potter and the Deathly Hallows
-    # 8. Harry Potter and the Cursed Child- Parts One and Two playscript
     # DOC
     @books = HarryPotterBooks::Potter.book
     @books.each.with_index(1) do |book, i|
@@ -35,7 +34,7 @@ class HarryPotterBooks::CLI
       if input.to_i > 0
         the_book = @books[input.to_i-1]
         #@books[input.to_i-1] is to get into the books array
-        puts "#{the_book.name} - #{the_book.author} - #{the_book.overview} - #{the_book.url}"
+        puts "#{the_book.name} - #{the_book.overview} - #{the_book.url}"
         #you are now reading out of these objects ^
       elsif input =="list"
         list_books

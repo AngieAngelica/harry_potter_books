@@ -1,5 +1,5 @@
 class HarryPotterBooks::Potter
-  attr_accessor :name, :summary, :goodreads_rating, :url
+  attr_accessor :name, :summary, :goodreads_rating
 
   def self.book
     # scrape Harry Potter book information from goodreads.com
@@ -18,7 +18,6 @@ def self.scrape_book_1
   name = doc.css("h1").text
   summary = doc.css("span")[47].inner_text
   goodreads_rating = doc.css("span")[40].inner_text
-  binding.pry
 end
 
 
