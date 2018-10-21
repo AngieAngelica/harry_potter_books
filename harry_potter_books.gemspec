@@ -9,8 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Angie Kassab"]
   spec.email         = ["anasab12@gmail.com"]
 
-  spec.summary       = "This gem lists Harry Potter books."
-  spec.description   = "This gem lists all of the Harry Potter books written by J.K Rowling."
+  spec.summary       = "This gem lists each book of the Harry Potter series."
+  spec.description   = "This gem gives a summary, Goodreads rating, and a quote
+                        from each of the Harry Potter books written by J.K Rowling."
   spec.homepage      = "https://github.com/AngieAngelica/harry_potter_books"
   spec.license       = "MIT"
 
