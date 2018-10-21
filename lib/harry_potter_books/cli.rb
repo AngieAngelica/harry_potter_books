@@ -14,6 +14,7 @@ class HarryPotterBooks::CLI
     Here is a list of Harry Potter books written by J.K Rowling:
 
     DOC
+    .colorize(:purple)
     # 1. Harry Potter and the Sorcerer's Stone
     # 2. Harry Potter and the Chamber of Secrets
     # 3. Harry Potter and the Prisoner of Azkaban
@@ -58,13 +59,13 @@ class HarryPotterBooks::CLI
       elsif input =="exit"
         goodbye
       else
-        puts "Please try again"
+        puts "Please try again".colorize(:red)
       end
     end
   end
 
   def goodbye
-    puts "Thank you for reading about Harry Potter!"
+    puts "Thank you for reading about Harry Potter!".colorize(:cyan)
   end
 
 end
