@@ -20,7 +20,7 @@ class HarryPotterBooks::CLI
     # DOC
     @books = HarryPotterBooks::Potter.book
     @books.each.with_index(1) do |book, i|
-      puts "#{i}. #{book.name} - #{book.author} - #{book.overview} - #{book.url}"
+      puts "#{i}. #{book.name} - #{book.summary} - #{book.goodreads_rating} - #{book.quote}"
     end
   end
 
