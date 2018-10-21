@@ -1,5 +1,5 @@
 class HarryPotterBooks::Potter
-  attr_accessor :name, :author, :overview, :goodreads_rating, :url
+  attr_accessor :name, :summary, :goodreads_rating, :url
 
   def self.book
     # scrape Harry Potter book information from goodreads.com
@@ -16,6 +16,8 @@ class HarryPotterBooks::Potter
 def self.scrape_book_1
   doc= Nokogiri::HTML(open("https://www.goodreads.com/book/show/3.Harry_Potter_and_the_Sorcerer_s_Stone"))
   name = doc.css("h1").text
+  summary = doc.css("span")[47].inner_text
+  goodreads_rating = doc.css("span")[40].inner_text
   binding.pry
 end
 
