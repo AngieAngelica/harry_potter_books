@@ -43,7 +43,7 @@ class HarryPotterBooks::CLI
         #{the_book.name}
         #{the_book.summary}
 
-        Goodreads rating: #{the_book.goodreads_rating}
+        Goodreads rating: #{the_book.goodreads_rating} out of 5 stars
 
         A quote from the book: #{the_book.quote}
 
