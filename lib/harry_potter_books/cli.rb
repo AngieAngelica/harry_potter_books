@@ -8,13 +8,13 @@ class HarryPotterBooks::CLI
   end
 
   def list_books
+    puts "                                                          "
+    puts "Welcome to Goodreads' overview of the Harry Potter series!".colorize(:magenta)
     puts <<~DOC
-    Welcome to Goodreads' overview of the Harry Potter series!
 
     Here is a list of Harry Potter books written by J.K Rowling:
 
     DOC
-    .colorize(:purple)
     # 1. Harry Potter and the Sorcerer's Stone
     # 2. Harry Potter and the Chamber of Secrets
     # 3. Harry Potter and the Prisoner of Azkaban
@@ -29,6 +29,7 @@ class HarryPotterBooks::CLI
       puts <<~DOC
        #{i}.#{book.name}
       DOC
+      .colorize(:yellow)
     end
   end
 
