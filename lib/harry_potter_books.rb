@@ -3,6 +3,7 @@
 require 'open-uri'
 require 'nokogiri'
 require 'pry'
+require 'awesome_print'
 
 require_relative "./harry_potter_books/version"
 require_relative "./harry_potter_books/cli"
