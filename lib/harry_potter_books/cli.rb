@@ -54,7 +54,9 @@ class HarryPotterBooks::CLI
         A quote from the book: #{the_book.quote}
 
         DOC
+        .colorize(:yellow)
         #you are now reading out of these objects ^
+
       elsif input =="list"
         list_books
       elsif input =="exit"
