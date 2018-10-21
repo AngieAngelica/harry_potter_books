@@ -8,8 +8,12 @@ class HarryPotterBooks::CLI
   end
 
   def list_books
-    puts "Here is a list of Harry Potter books written by J.K Rowling:"
-    # puts <<-DOC
+    puts <<~DOC
+    Welcome to Goodreads' overview of the Harry Potter series!
+
+    Here is a list of Harry Potter books written by J.K Rowling:
+
+    DOC
     # 1. Harry Potter and the Sorcerer's Stone
     # 2. Harry Potter and the Chamber of Secrets
     # 3. Harry Potter and the Prisoner of Azkaban
@@ -17,7 +21,7 @@ class HarryPotterBooks::CLI
     # 5. Harry Potter and the Order of the Phoenix
     # 6. Harry Potter and the Half-Blood Prince
     # 7. Harry Potter and the Deathly Hallows
-    # DOC
+
     # ^pseudocode menu
     @books = HarryPotterBooks::Potter.book
     @books.each.with_index(1) do |book, i|
@@ -60,7 +64,7 @@ class HarryPotterBooks::CLI
   end
 
   def goodbye
-    puts "Thank you for reading about the Harry Potter books!"
+    puts "Thank you for reading about Harry Potter!"
   end
 
 end
