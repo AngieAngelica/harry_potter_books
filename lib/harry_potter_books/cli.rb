@@ -37,7 +37,15 @@ class HarryPotterBooks::CLI
       if input.to_i > 0
         the_book = @books[input.to_i-1]
         #@books[input.to_i-1] is to get into the books array
-        puts "#{the_book.name} - #{the_book.summary} - #{the_book.goodreads_rating} - #{the_book.quote}"
+        puts <<-DOC
+        #{the_book.name}
+        #{the_book.summary}
+
+        Goodreads rating: #{the_book.goodreads_rating}
+
+        A quote from the book: #{the_book.quote}
+
+        DOC
         #you are now reading out of these objects ^
       elsif input =="list"
         list_books
