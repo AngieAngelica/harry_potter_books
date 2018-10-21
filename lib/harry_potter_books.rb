@@ -4,6 +4,7 @@ require 'open-uri'
 require 'nokogiri'
 require 'pry'
 require 'colorize'
+require 'word_wrap'
 
 require_relative "./harry_potter_books/version"
 require_relative "./harry_potter_books/cli"
