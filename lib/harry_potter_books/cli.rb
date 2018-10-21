@@ -18,16 +18,11 @@ class HarryPotterBooks::CLI
     # 6. Harry Potter and the Half-Blood Prince
     # 7. Harry Potter and the Deathly Hallows
     # DOC
+    # ^pseudocode menu
     @books = HarryPotterBooks::Potter.book
     @books.each.with_index(1) do |book, i|
       puts <<-DOC
-       "#{i}.#{book.name}
-    Summary: #{book.summary}
-
-    Goodreads rating: #{book.goodreads_rating}
-
-    A quote from the book: #{book.quote}"
-
+       #{i}.#{book.name}
       DOC
     end
   end
