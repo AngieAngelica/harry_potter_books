@@ -70,7 +70,9 @@ class HarryPotterBooks::CLI
   end
 
   def goodbye
+    puts "                                         "
     puts "Thank you for reading about Harry Potter!".colorize(:cyan)
+    puts "                                         "
   end
 
 end
