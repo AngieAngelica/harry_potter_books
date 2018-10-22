@@ -10,6 +10,7 @@ class HarryPotterBooks::CLI
   def list_books
     puts "                                                          "
     puts "Welcome to Goodreads' overview of the Harry Potter series!".colorize(:magenta)
+    puts "__________________________________________________________".colorize(:magenta)
     puts <<~DOC
 
     Here is a list of Harry Potter books written by J.K Rowling:
@@ -46,7 +47,8 @@ class HarryPotterBooks::CLI
         the_book = @books[input.to_i-1]
         #@books[input.to_i-1] is to get into the books array
         puts <<~DOC
-        #{the_book.name}
+          #{the_book.name}
+
         #{the_book.summary}
 
         Goodreads rating: #{the_book.goodreads_rating} out of 5 stars
