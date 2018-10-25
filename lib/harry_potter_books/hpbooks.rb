@@ -3,7 +3,7 @@ require_relative '../lib/hpbooks_scraper.rb'
 # New Objects (each book with its name, summary, rating and quote)
 
 class HarryPotterBooks::Potter
-  attr_accessor :name, :summary, :goodreads_rating, :quote
+  attr_accessor :title, :link, :name, :summary, :goodreads_rating, :quote
   @@all = []
 
   def self.all
