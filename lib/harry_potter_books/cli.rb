@@ -25,7 +25,7 @@ class HarryPotterBooks::CLI
     # 7. Harry Potter and the Deathly Hallows
 
     # ^pseudocode menu
-    @books = HarryPotterBooks::Potter.book
+    @books = HarryPotterBooks::Potter.all
     @books.each.with_index(1) do |book, i|
       puts <<~DOC
        #{i}.#{book.name}
